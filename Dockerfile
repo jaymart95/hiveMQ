@@ -1,4 +1,4 @@
-# Use the official HiveMQ Docker image as the base image
+# Use the official HiveMQ Docker image as the base imageff
 FROM hivemq/hivemq-ce
 # For Enterprise Edition use the following base image
 # FROM hivemq/hivemq4
