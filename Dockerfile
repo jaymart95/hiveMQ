@@ -6,6 +6,12 @@ FROM hivemq/hivemq-ce
 # Switch to root user to install packages
 USER root
 
+# Ensure necessary directories have the correct permissions
+RUN mkdir -p /var/lib/apt/lists/partial && \
+    chmod -R 755 /var/lib/apt/lists && \
+    chmod -R 755 /var/cache/apt && \
+    chmod -R 755 /var/lib/dpkg
+
 # Install Nginx for reverse proxy
 RUN apt-get update && \
     apt-get install -y nginx && \
